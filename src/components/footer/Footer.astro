@@ -1,0 +1,28 @@
+---
+import { business } from "../../config/business";
+import { nav } from "../../config/navigation";
+---
+<footer class="site-footer">
+  <div class="shell footer-shell">
+    <div class="footer-brand">
+      <h2>{business.name}</h2>
+      <p>{business.tagline}</p>
+      <p class="footer-note">
+        A curated vendor marketplace built to feel warm, boutique, and discoverable.
+      </p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>{business.city}, {business.state}</p>
+      <p>{business.address}</p>
+      <p><a href={`tel:${business.phone}`}>{business.phone}</a></p>
+      <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      {nav.map((item) => (
+        <p><a href={item.link}>{item.label}</a></p>
+      ))}
+    </div>
+  </div>
+</footer>

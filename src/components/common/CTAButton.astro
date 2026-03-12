@@ -1,0 +1,6 @@
+---
+const { href, label, variant = "primary" } = Astro.props;
+---
+<a class:list={["cta-button", variant === "secondary" && "is-secondary", variant === "ghost" && "is-ghost"]} href={href}>
+  {label}
+</a>

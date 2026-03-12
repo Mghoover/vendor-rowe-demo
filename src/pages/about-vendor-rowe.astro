@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import SectionHeader from "../components/common/SectionHeader.astro";
+import InfoGrid from "../components/common/InfoGrid.astro";
+import TeamSection from "../sections/TeamSection.astro";
+import GallerySection from "../sections/GallerySection.astro";
+import TestimonialsSection from "../sections/TestimonialsSection.astro";
+import { site } from "../config/site";
+import { team } from "../content/team";
+import { gallery } from "../content/gallery";
+import { testimonials } from "../content/testimonials";
+---
+<BaseLayout pageTitle={site.pages.about.title} pageDescription={site.pages.about.description}>
+  <Header />
+  <main>
+    <section class="content-section">
+      <div class="shell">
+        <SectionHeader eyebrow="About Vendor Rowe" title={site.about.introTitle} description={site.about.introBody} />
+        <InfoGrid items={site.about.metrics} columns={3} />
+      </div>
+    </section>
+    <TeamSection
+      heading={{
+        eyebrow: "Founder Story",
+        title: "Vendor Rowe was created from inside the booth experience",
+        description:
+          "The marketplace reflects the perspective of someone who understands how independent vendors want to present their products and build a real following.",
+      }}
+      items={team}
+    />
+    <GallerySection
+      heading={{
+        eyebrow: "Marketplace Mood",
+        title: "Styled to feel curated, warm, and elevated",
+        description:
+          "Vendor Rowe is positioned as a boutique market, not a cluttered antique mall. The experience is meant to feel discoverable and polished.",
+      }}
+      items={gallery}
+    />
+    <TestimonialsSection
+      heading={{
+        eyebrow: "Why It Resonates",
+        title: "The local response is part of the story",
+        description:
+          "A better environment benefits both shoppers and the independent sellers building businesses inside the market.",
+      }}
+      items={testimonials}
+    />
+  </main>
+  <Footer />
+</BaseLayout>

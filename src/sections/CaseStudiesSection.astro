@@ -1,0 +1,19 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section alt-surface">
+  <div class="shell">
+    <SectionHeader {...heading} />
+    <div class="card-grid">
+      {items.map((item) => (
+        <article class="content-card">
+          <h3>{item.title}</h3>
+          <p>{item.summary}</p>
+          <p class="card-meta">{item.outcome}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

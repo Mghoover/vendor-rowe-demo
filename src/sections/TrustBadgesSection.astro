@@ -1,0 +1,12 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import InfoGrid from "../components/common/InfoGrid.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section alt-surface">
+  <div class="shell">
+    <SectionHeader {...heading} />
+    <InfoGrid items={items} columns={4} />
+  </div>
+</section>

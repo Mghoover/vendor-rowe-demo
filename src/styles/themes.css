@@ -1,0 +1,185 @@
+:root {
+  --primary: #70523d;
+  --accent: #8a9a7b;
+  --bg: #fffdf9;
+  --surface: #f8f1e7;
+  --text: #2b2926;
+  --muted: #6f655c;
+  --border: rgba(112, 82, 61, 0.15);
+  --border-soft: rgba(112, 82, 61, 0.08);
+  --panel: rgba(255, 252, 247, 0.88);
+  --panel-strong: rgba(255, 252, 247, 0.92);
+  --header-bg: rgba(255, 250, 244, 0.88);
+  --announcement-bg: rgba(112, 82, 61, 0.08);
+  --announcement-border: rgba(112, 82, 61, 0.12);
+  --hero-card-bg: rgba(255, 255, 255, 0.65);
+  --tag-bg: rgba(138, 154, 123, 0.14);
+  --pill-bg: rgba(112, 82, 61, 0.08);
+  --cta-point-bg: rgba(138, 154, 123, 0.1);
+  --page-wash-a: rgba(138, 154, 123, 0.12);
+  --page-wash-b: rgba(201, 143, 107, 0.12);
+  --seasonal-wash-a: rgba(138, 154, 123, 0.12);
+  --seasonal-wash-b: rgba(201, 143, 107, 0.12);
+  --button-text: #fffdf8;
+  --button-secondary-text: #fffdf8;
+  --button-shadow: 0 16px 30px rgba(112, 82, 61, 0.16);
+  --shadow: 0 22px 48px rgba(73, 56, 44, 0.08);
+  --decor-primary: rgba(138, 154, 123, 0.18);
+  --decor-secondary: rgba(201, 143, 107, 0.16);
+  --decor-soft: rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="default"] {
+  --primary: #70523d;
+  --accent: #8a9a7b;
+  --bg: #fffdf9;
+  --surface: #f8f1e7;
+  --text: #2b2926;
+  --muted: #6f655c;
+  --border: rgba(112, 82, 61, 0.15);
+  --border-soft: rgba(112, 82, 61, 0.08);
+  --panel: rgba(255, 252, 247, 0.88);
+  --panel-strong: rgba(255, 252, 247, 0.92);
+  --header-bg: rgba(255, 250, 244, 0.88);
+  --announcement-bg: rgba(112, 82, 61, 0.08);
+  --announcement-border: rgba(112, 82, 61, 0.12);
+  --hero-card-bg: rgba(255, 255, 255, 0.65);
+  --tag-bg: rgba(138, 154, 123, 0.14);
+  --pill-bg: rgba(112, 82, 61, 0.08);
+  --cta-point-bg: rgba(138, 154, 123, 0.1);
+  --page-wash-a: rgba(138, 154, 123, 0.12);
+  --page-wash-b: rgba(201, 143, 107, 0.12);
+  --seasonal-wash-a: rgba(138, 154, 123, 0.12);
+  --seasonal-wash-b: rgba(201, 143, 107, 0.12);
+  --button-text: #fffdf8;
+  --button-secondary-text: #fffdf8;
+  --button-shadow: 0 16px 30px rgba(112, 82, 61, 0.16);
+  --shadow: 0 22px 48px rgba(73, 56, 44, 0.08);
+  --decor-primary: rgba(138, 154, 123, 0.18);
+  --decor-secondary: rgba(201, 143, 107, 0.16);
+  --decor-soft: rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="spring"] {
+  --primary: #2f7a4b;
+  --accent: #4ade80;
+  --bg: #f7fff8;
+  --surface: #ecfdf3;
+  --text: #14532d;
+  --muted: #3f6b50;
+  --border: rgba(47, 122, 75, 0.16);
+  --border-soft: rgba(47, 122, 75, 0.1);
+  --panel: rgba(248, 255, 250, 0.9);
+  --panel-strong: rgba(248, 255, 250, 0.96);
+  --header-bg: rgba(244, 255, 247, 0.88);
+  --announcement-bg: rgba(74, 222, 128, 0.12);
+  --announcement-border: rgba(47, 122, 75, 0.16);
+  --hero-card-bg: rgba(255, 255, 255, 0.72);
+  --tag-bg: rgba(74, 222, 128, 0.16);
+  --pill-bg: rgba(74, 222, 128, 0.14);
+  --cta-point-bg: rgba(47, 122, 75, 0.1);
+  --page-wash-a: rgba(74, 222, 128, 0.16);
+  --page-wash-b: rgba(190, 242, 202, 0.2);
+  --seasonal-wash-a: rgba(74, 222, 128, 0.16);
+  --seasonal-wash-b: rgba(190, 242, 202, 0.24);
+  --button-text: #f7fff8;
+  --button-secondary-text: #14532d;
+  --button-shadow: 0 16px 30px rgba(47, 122, 75, 0.16);
+  --shadow: 0 22px 48px rgba(20, 83, 45, 0.08);
+  --decor-primary: rgba(74, 222, 128, 0.22);
+  --decor-secondary: rgba(190, 242, 202, 0.28);
+  --decor-soft: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="fall"] {
+  --primary: #7c2d12;
+  --accent: #ea580c;
+  --bg: #fff8f1;
+  --surface: #fff7ed;
+  --text: #7c2d12;
+  --muted: #9a5b42;
+  --border: rgba(124, 45, 18, 0.16);
+  --border-soft: rgba(124, 45, 18, 0.1);
+  --panel: rgba(255, 249, 241, 0.9);
+  --panel-strong: rgba(255, 248, 238, 0.96);
+  --header-bg: rgba(255, 246, 236, 0.9);
+  --announcement-bg: rgba(234, 88, 12, 0.12);
+  --announcement-border: rgba(124, 45, 18, 0.16);
+  --hero-card-bg: rgba(255, 252, 247, 0.74);
+  --tag-bg: rgba(251, 146, 60, 0.18);
+  --pill-bg: rgba(234, 88, 12, 0.12);
+  --cta-point-bg: rgba(194, 65, 12, 0.1);
+  --page-wash-a: rgba(251, 146, 60, 0.16);
+  --page-wash-b: rgba(253, 186, 116, 0.18);
+  --seasonal-wash-a: rgba(251, 146, 60, 0.16);
+  --seasonal-wash-b: rgba(254, 215, 170, 0.24);
+  --button-text: #fff7ed;
+  --button-secondary-text: #fff7ed;
+  --button-shadow: 0 16px 30px rgba(154, 52, 18, 0.18);
+  --shadow: 0 22px 48px rgba(124, 45, 18, 0.08);
+  --decor-primary: rgba(234, 88, 12, 0.2);
+  --decor-secondary: rgba(251, 191, 36, 0.18);
+  --decor-soft: rgba(255, 251, 235, 0.58);
+}
+
+[data-theme="christmas"] {
+  --primary: #14532d;
+  --accent: #dc2626;
+  --bg: #fff7f7;
+  --surface: #fef2f2;
+  --text: #14532d;
+  --muted: #3c6d52;
+  --border: rgba(20, 83, 45, 0.16);
+  --border-soft: rgba(20, 83, 45, 0.1);
+  --panel: rgba(255, 249, 249, 0.92);
+  --panel-strong: rgba(255, 251, 251, 0.98);
+  --header-bg: rgba(255, 247, 247, 0.92);
+  --announcement-bg: rgba(220, 38, 38, 0.12);
+  --announcement-border: rgba(20, 83, 45, 0.16);
+  --hero-card-bg: rgba(255, 255, 255, 0.76);
+  --tag-bg: rgba(220, 38, 38, 0.14);
+  --pill-bg: rgba(20, 83, 45, 0.1);
+  --cta-point-bg: rgba(20, 83, 45, 0.1);
+  --page-wash-a: rgba(220, 38, 38, 0.12);
+  --page-wash-b: rgba(20, 83, 45, 0.14);
+  --seasonal-wash-a: rgba(220, 38, 38, 0.14);
+  --seasonal-wash-b: rgba(20, 83, 45, 0.18);
+  --button-text: #fff7f7;
+  --button-secondary-text: #fff7f7;
+  --button-shadow: 0 16px 30px rgba(20, 83, 45, 0.16);
+  --shadow: 0 22px 48px rgba(20, 83, 45, 0.08);
+  --decor-primary: rgba(255, 255, 255, 0.8);
+  --decor-secondary: rgba(220, 38, 38, 0.16);
+  --decor-soft: rgba(255, 255, 255, 0.68);
+}
+
+[data-theme="valentine"] {
+  --primary: #881337;
+  --accent: #ec4899;
+  --bg: #fff6f7;
+  --surface: #fff1f2;
+  --text: #881337;
+  --muted: #a63b67;
+  --border: rgba(136, 19, 55, 0.16);
+  --border-soft: rgba(136, 19, 55, 0.1);
+  --panel: rgba(255, 247, 249, 0.92);
+  --panel-strong: rgba(255, 250, 251, 0.98);
+  --header-bg: rgba(255, 245, 247, 0.9);
+  --announcement-bg: rgba(236, 72, 153, 0.12);
+  --announcement-border: rgba(136, 19, 55, 0.16);
+  --hero-card-bg: rgba(255, 255, 255, 0.78);
+  --tag-bg: rgba(244, 114, 182, 0.16);
+  --pill-bg: rgba(236, 72, 153, 0.12);
+  --cta-point-bg: rgba(190, 24, 93, 0.1);
+  --page-wash-a: rgba(244, 114, 182, 0.14);
+  --page-wash-b: rgba(251, 207, 232, 0.18);
+  --seasonal-wash-a: rgba(244, 114, 182, 0.16);
+  --seasonal-wash-b: rgba(251, 207, 232, 0.22);
+  --button-text: #fff5f7;
+  --button-secondary-text: #fff5f7;
+  --button-shadow: 0 16px 30px rgba(190, 24, 93, 0.16);
+  --shadow: 0 22px 48px rgba(136, 19, 55, 0.08);
+  --decor-primary: rgba(244, 114, 182, 0.24);
+  --decor-secondary: rgba(251, 207, 232, 0.24);
+  --decor-soft: rgba(255, 255, 255, 0.62);
+}

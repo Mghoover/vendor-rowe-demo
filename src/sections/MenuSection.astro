@@ -1,0 +1,19 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import MenuItemCard from "../components/cards/MenuItemCard.astro";
+
+const { heading, categories } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <SectionHeader {...heading} />
+    {categories.map((category) => (
+      <div class="menu-category">
+        <h3>{category.title}</h3>
+        <div class="card-grid two-column">
+          {category.items.map((item) => <MenuItemCard item={item} />)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

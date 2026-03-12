@@ -1,0 +1,13 @@
+---
+const { item } = Astro.props;
+---
+<article class="content-card service-card">
+  {item.icon && <p class="card-kicker">{item.icon}</p>}
+  <h3>{item.title}</h3>
+  <p>{item.summary}</p>
+  {item.tags?.length > 0 && (
+    <ul class="tag-list">
+      {item.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+  )}
+</article>

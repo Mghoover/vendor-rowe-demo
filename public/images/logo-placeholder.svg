@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="88" viewBox="0 0 320 88" fill="none">
+  <rect width="88" height="88" rx="24" fill="#0f1b33"/>
+  <path d="M24 44h40" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round"/>
+  <path d="M44 24v40" stroke="#a78bfa" stroke-width="8" stroke-linecap="round"/>
+  <text x="108" y="38" fill="#0f172a" font-family="Arial, sans-serif" font-size="22" font-weight="700">Your Business</text>
+  <text x="108" y="61" fill="#475569" font-family="Arial, sans-serif" font-size="14">Replace with client logo</text>
+</svg>

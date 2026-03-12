@@ -1,0 +1,22 @@
+---
+import CTAButton from "../components/common/CTAButton.astro";
+import SectionHeader from "../components/common/SectionHeader.astro";
+
+const { heading } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <div class="cta-panel">
+      <SectionHeader eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
+      {heading.points?.length > 0 && (
+        <ul class="cta-points">
+          {heading.points.map((point) => <li>{point}</li>)}
+        </ul>
+      )}
+      <div class="hero-actions">
+        <CTAButton href={heading.primaryCta.href} label={heading.primaryCta.label} />
+        <CTAButton href={heading.secondaryCta.href} label={heading.secondaryCta.label} variant="secondary" />
+      </div>
+    </div>
+  </div>
+</section>

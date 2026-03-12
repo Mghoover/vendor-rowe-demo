@@ -1,0 +1,11 @@
+---
+const { items = [], columns = 3 } = Astro.props;
+---
+<div class="info-grid" style={`--info-columns: ${columns};`}>
+  {items.map((item) => (
+    <article class="info-card">
+      <h3>{item.label}</h3>
+      <p>{item.value}</p>
+    </article>
+  ))}
+</div>

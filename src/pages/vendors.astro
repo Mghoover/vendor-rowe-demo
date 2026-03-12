@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import VendorDirectorySection from "../sections/VendorDirectorySection.astro";
+import CTASection from "../sections/CTASection.astro";
+import { site } from "../config/site";
+import { vendors } from "../content/vendors";
+
+const featuredVendors = vendors.filter((vendor) => vendor.featured);
+---
+<BaseLayout pageTitle={site.pages.vendors.title} pageDescription={site.pages.vendors.description}>
+  <Header />
+  <main>
+    <VendorDirectorySection
+      heading={site.vendorsPage}
+      items={featuredVendors}
+    />
+    <VendorDirectorySection
+      heading={{
+        eyebrow: "More Booths",
+        title: "A mix of antiques, makers, boutique decor, and collected charm",
+        description:
+          "Vendor Rowe is designed to keep shoppers curious. Inventory changes often, making every visit feel a little different.",
+      }}
+      items={vendors}
+    />
+    <CTASection heading={site.home.sectionContent.cta} />
+  </main>
+  <Footer />
+</BaseLayout>

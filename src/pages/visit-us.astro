@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import SectionHeader from "../components/common/SectionHeader.astro";
+import InfoGrid from "../components/common/InfoGrid.astro";
+import LocationSection from "../sections/LocationSection.astro";
+import GallerySection from "../sections/GallerySection.astro";
+import { site } from "../config/site";
+import { business } from "../config/business";
+import { gallery } from "../content/gallery";
+---
+<BaseLayout pageTitle={site.pages.visit.title} pageDescription={site.pages.visit.description}>
+  <Header />
+  <main>
+    <section class="content-section">
+      <div class="shell split-layout">
+        <div>
+          <SectionHeader eyebrow={site.visitPage.eyebrow} title={site.visitPage.title} description={site.visitPage.description} />
+        </div>
+        <div class="content-card">
+          <p class="card-kicker">Hours Placeholder</p>
+          <h2>Hours and market updates can be refined before launch.</h2>
+          <p>
+            The current hours are placeholders for demo purposes and can be updated in one config file when the final schedule is confirmed.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="content-section alt-surface">
+      <div class="shell">
+        <SectionHeader eyebrow="Hours" title="Current demo hours" description="Update these directly in `src/config/business.ts` when seasonal or permanent hours change." />
+        <InfoGrid items={business.hours} columns={3} />
+      </div>
+    </section>
+    <LocationSection heading={site.home.sectionContent.location} />
+    <GallerySection
+      heading={{
+        eyebrow: "What You'll Find",
+        title: "Boutique displays, local makers, and constantly changing discoveries",
+        description:
+          "Vendor Rowe is designed to encourage repeat visits, slow browsing, and the excitement of unexpected finds.",
+      }}
+      items={gallery}
+    />
+  </main>
+  <Footer />
+</BaseLayout>

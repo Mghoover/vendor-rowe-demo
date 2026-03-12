@@ -1,0 +1,69 @@
+---
+import "../styles/themes.css";
+import "../styles/global.css";
+
+import SeasonalDecor from "../components/SeasonalDecor.astro";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
+import theme from "../content/siteTheme.json";
+import { business } from "../config/business";
+import { theme as siteTheme } from "../config/theme";
+
+const { pageTitle, pageDescription } = Astro.props;
+const titleSuffix = business.seoTitleSuffix ?? business.name;
+const resolvedTitle = pageTitle ? `${pageTitle} | ${titleSuffix}` : titleSuffix;
+const resolvedDescription = pageDescription ?? business.description;
+const canonicalUrl = new URL(Astro.url.pathname, business.websiteUrl).toString();
+const showThemeSwitcher = import.meta.env.DEV || Astro.url.searchParams.get("theme-demo") === "1";
+const openingHoursSpecification = business.hours.map((item) => ({
+  "@type": "OpeningHoursSpecification",
+  dayOfWeek: item.label,
+  opens: item.value.includes("Closed") ? "00:00" : "10:00",
+  closes: item.value.includes("Closed") ? "00:00" : "18:00",
+}));
+const schemaTypes = [business.schemaType, ...(business.additionalSchemaTypes ?? [])];
+const schemaGraph = schemaTypes.map((schemaType) => ({
+  "@context": "https://schema.org",
+  "@type": schemaType,
+  name: business.name,
+  description: business.description,
+  url: business.websiteUrl,
+  telephone: business.phone,
+  email: business.email,
+  image: `${business.websiteUrl}${siteTheme.currentSeason.heroImages[0]}`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.address,
+    addressLocality: business.city,
+    addressRegion: business.state,
+    postalCode: business.postalCode,
+  },
+  areaServed: business.serviceAreas,
+  openingHoursSpecification,
+}));
+---
+<!doctype html>
+<html lang="en" data-theme={theme.theme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={resolvedDescription} />
+    <title>{resolvedTitle}</title>
+    <meta property="og:title" content={resolvedTitle} />
+    <meta property="og:description" content={resolvedDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${business.websiteUrl}${siteTheme.currentSeason.heroImages[0]}`} />
+    <meta name="theme-color" content={siteTheme.primaryColor} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify({ "@graph": schemaGraph })} />
+  </head>
+  <body>
+    <SeasonalDecor />
+    {showThemeSwitcher && <ThemeSwitcher currentTheme={theme.theme} />}
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import HeroSection from "../sections/HeroSection.astro";
+import StorySection from "../sections/StorySection.astro";
+import SeasonalPromoSection from "../sections/SeasonalPromoSection.astro";
+import ServicesSection from "../sections/ServicesSection.astro";
+import GallerySection from "../sections/GallerySection.astro";
+import TestimonialsSection from "../sections/TestimonialsSection.astro";
+import CTASection from "../sections/CTASection.astro";
+import LocationSection from "../sections/LocationSection.astro";
+import { site } from "../config/site";
+import { services } from "../content/services";
+import { testimonials } from "../content/testimonials";
+import { gallery } from "../content/gallery";
+
+const sectionComponents = {
+  hero: HeroSection,
+  story: StorySection,
+  seasonalPromo: SeasonalPromoSection,
+  services: ServicesSection,
+  gallery: GallerySection,
+  testimonials: TestimonialsSection,
+  cta: CTASection,
+  location: LocationSection,
+};
+
+const sectionProps = {
+  hero: { hero: site.home.hero },
+  story: { content: site.home.sectionContent.story },
+  seasonalPromo: {},
+  services: { heading: site.home.sectionContent.services, items: services },
+  gallery: { heading: site.home.sectionContent.gallery, items: gallery },
+  testimonials: { heading: site.home.sectionContent.testimonials, items: testimonials },
+  cta: { heading: site.home.sectionContent.cta },
+  location: { heading: site.home.sectionContent.location },
+};
+---
+<BaseLayout pageTitle={site.pages.home.title} pageDescription={site.pages.home.description}>
+  <Header />
+  <main>
+    {site.home.sectionOrder.map((sectionKey) => {
+      const Section = sectionComponents[sectionKey];
+      return Section ? <Section {...sectionProps[sectionKey]} /> : null;
+    })}
+  </main>
+  <Footer />
+</BaseLayout>

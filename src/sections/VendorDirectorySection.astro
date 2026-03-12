@@ -1,0 +1,14 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import VendorBoothCard from "../components/cards/VendorBoothCard.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <SectionHeader eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
+    <div class="card-grid three-column">
+      {items.map((vendor) => <VendorBoothCard vendor={vendor} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <SectionHeader eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
+    <div class="gallery-grid boutique-gallery-grid">
+      {items.map((item, index) => (
+        <article class:list={["gallery-card", index === 0 && "is-large"]}>
+          <img src={item.image ?? "/images/photo-placeholder.svg"} alt={item.title} loading="lazy" />
+          <div class="gallery-card-copy">
+            <h3>{item.title}</h3>
+            {item.subtitle && <p>{item.subtitle}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

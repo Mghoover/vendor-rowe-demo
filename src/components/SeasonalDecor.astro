@@ -1,0 +1,225 @@
+<div class="seasonal-decor" aria-hidden="true">
+  <div class="decor decor-spring">
+    <span class="petal petal-a"></span>
+    <span class="petal petal-b"></span>
+    <span class="petal petal-c"></span>
+  </div>
+  <div class="decor decor-fall">
+    <span class="leaf leaf-a"></span>
+    <span class="leaf leaf-b"></span>
+    <span class="leaf leaf-c"></span>
+  </div>
+  <div class="decor decor-christmas">
+    <span class="flake flake-a"></span>
+    <span class="flake flake-b"></span>
+    <span class="flake flake-c"></span>
+    <span class="flake flake-d"></span>
+  </div>
+  <div class="decor decor-valentine">
+    <span class="heart heart-a"></span>
+    <span class="heart heart-b"></span>
+    <span class="heart heart-c"></span>
+  </div>
+</div>
+
+<style>
+  .seasonal-decor {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .decor {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  :global(html[data-theme="spring"]) .decor-spring,
+  :global(html[data-theme="fall"]) .decor-fall,
+  :global(html[data-theme="christmas"]) .decor-christmas,
+  :global(html[data-theme="valentine"]) .decor-valentine {
+    opacity: 1;
+  }
+
+  .petal,
+  .leaf,
+  .flake,
+  .heart {
+    position: absolute;
+    display: block;
+  }
+
+  .petal {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 30% 30%, var(--decor-soft) 0 18%, transparent 19%),
+      radial-gradient(circle, var(--decor-primary) 0 56%, transparent 58%);
+    filter: blur(0.4px);
+  }
+
+  .petal-a {
+    top: 5rem;
+    right: 8%;
+  }
+
+  .petal-b {
+    top: 11rem;
+    right: 22%;
+    width: 6rem;
+    height: 6rem;
+    background: radial-gradient(circle, var(--decor-secondary) 0 58%, transparent 60%);
+  }
+
+  .petal-c {
+    top: 3rem;
+    left: 4%;
+    width: 7rem;
+    height: 7rem;
+    background: radial-gradient(circle, var(--decor-primary) 0 58%, transparent 60%);
+  }
+
+  .leaf {
+    width: 5rem;
+    height: 8rem;
+    border-radius: 100% 0;
+    background: linear-gradient(180deg, var(--decor-secondary), var(--decor-primary));
+    opacity: 0.9;
+  }
+
+  .leaf-a {
+    top: 7rem;
+    left: 3%;
+    transform: rotate(-18deg);
+  }
+
+  .leaf-b {
+    top: 14rem;
+    right: 8%;
+    transform: rotate(28deg);
+  }
+
+  .leaf-c {
+    bottom: 4rem;
+    left: 18%;
+    width: 3.8rem;
+    height: 6.4rem;
+    transform: rotate(-38deg);
+  }
+
+  .flake {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 999px;
+    background: var(--decor-primary);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--decor-primary) 22%, transparent);
+  }
+
+  .flake-a {
+    top: 5rem;
+    right: 12%;
+  }
+
+  .flake-b {
+    top: 9rem;
+    right: 24%;
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .flake-c {
+    top: 12rem;
+    left: 8%;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .flake-d {
+    bottom: 6rem;
+    left: 24%;
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+
+  .heart {
+    width: 2.6rem;
+    height: 2.6rem;
+    transform: rotate(-45deg);
+    background: var(--decor-primary);
+    border-radius: 0.45rem;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    background: inherit;
+  }
+
+  .heart::before {
+    top: -1.3rem;
+    left: 0;
+  }
+
+  .heart::after {
+    top: 0;
+    left: 1.3rem;
+  }
+
+  .heart-a {
+    top: 6rem;
+    right: 10%;
+  }
+
+  .heart-b {
+    top: 14rem;
+    right: 24%;
+    width: 2rem;
+    height: 2rem;
+    background: var(--decor-secondary);
+  }
+
+  .heart-b::before,
+  .heart-b::after {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .heart-b::before {
+    top: -1rem;
+  }
+
+  .heart-b::after {
+    left: 1rem;
+  }
+
+  .heart-c {
+    bottom: 4rem;
+    left: 10%;
+    background: color-mix(in srgb, var(--decor-primary) 72%, var(--decor-soft));
+  }
+
+  @media (max-width: 720px) {
+    .petal-a,
+    .leaf-b,
+    .flake-b,
+    .heart-b {
+      right: 4%;
+    }
+
+    .petal-c,
+    .leaf-a,
+    .flake-c,
+    .heart-c {
+      left: 2%;
+    }
+  }
+</style>

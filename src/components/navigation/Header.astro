@@ -1,0 +1,27 @@
+---
+import { business } from "../../config/business";
+import { nav } from "../../config/navigation";
+import { theme } from "../../config/theme";
+---
+<header class="site-header">
+  <div class="announcement-bar">
+    <div class="shell announcement-shell">
+      <p>{theme.currentSeason.banner.eyebrow}</p>
+      <span>{theme.currentSeason.banner.text}</span>
+    </div>
+  </div>
+  <div class="shell header-shell">
+    <a class="brand-mark" href="/" aria-label={`${business.name} home`}>
+      <img src={theme.logo} alt={business.name} />
+      <div>
+        <strong>{business.name}</strong>
+        <span>{business.city}, {business.state}</span>
+      </div>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      {nav.map((item) => (
+        <a href={item.link}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

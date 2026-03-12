@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import SectionHeader from "../components/common/SectionHeader.astro";
+import InfoGrid from "../components/common/InfoGrid.astro";
+import CTASection from "../sections/CTASection.astro";
+import { site } from "../config/site";
+import { vendorBenefits } from "../content/vendor-benefits";
+import { vendorSteps } from "../content/vendor-steps";
+---
+<BaseLayout pageTitle={site.pages.becomeVendor.title} pageDescription={site.pages.becomeVendor.description}>
+  <Header />
+  <main>
+    <section class="content-section">
+      <div class="shell split-layout">
+        <div>
+          <SectionHeader eyebrow={site.becomeVendorPage.eyebrow} title={site.becomeVendorPage.title} description={site.becomeVendorPage.description} />
+          <ul class="tag-list">
+            {site.becomeVendorPage.idealVendors.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="content-card">
+          <p class="card-kicker">Why Vendors Choose It</p>
+          <h2>A polished booth environment can change how customers shop.</h2>
+          <p>
+            Vendor Rowe is built for independent sellers who want a more intentional retail setting
+            and a marketplace brand that supports their products.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="content-section alt-surface">
+      <div class="shell">
+        <SectionHeader eyebrow="Vendor Benefits" title="Turn your booth into a stronger retail presence" description="The marketplace is designed to help vendors look better, sell better, and feel part of a stronger shared brand." />
+        <InfoGrid items={vendorBenefits} columns={2} />
+      </div>
+    </section>
+    <section class="content-section">
+      <div class="shell">
+        <SectionHeader eyebrow="How It Works" title="A simple path from application to booth launch" description="Vendor Rowe keeps the process approachable while still protecting the curated feel of the market." />
+        <InfoGrid items={vendorSteps} columns={2} />
+      </div>
+    </section>
+    <CTASection heading={site.home.sectionContent.cta} />
+  </main>
+  <Footer />
+</BaseLayout>

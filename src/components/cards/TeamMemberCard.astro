@@ -1,0 +1,12 @@
+---
+const { item } = Astro.props;
+---
+<article class="content-card team-card">
+  <img src={item.image ?? "/images/person-placeholder.svg"} alt={item.name} loading="lazy" />
+  <div class="team-card-copy">
+    <p class="card-kicker">Founder Story</p>
+    <h3>{item.name}</h3>
+    <p class="card-meta">{item.role}</p>
+    <p>{item.bio}</p>
+  </div>
+</article>

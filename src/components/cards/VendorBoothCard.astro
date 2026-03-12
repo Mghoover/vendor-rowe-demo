@@ -1,0 +1,12 @@
+---
+const { vendor } = Astro.props;
+---
+<article class="content-card vendor-card">
+  <img src={vendor.image ?? "/images/vendor-booth.svg"} alt={vendor.title} loading="lazy" />
+  <div class="vendor-card-copy">
+    <p class="card-kicker">{vendor.booth}</p>
+    <h3>{vendor.title}</h3>
+    <p class="vendor-category">{vendor.category}</p>
+    <p>{vendor.description}</p>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+---
+import CTAButton from "../components/common/CTAButton.astro";
+import { theme } from "../config/theme";
+---
+<section class="content-section seasonal-section">
+  <div class="shell seasonal-panel">
+    <div>
+      <p class="section-eyebrow">{theme.currentSeason.promotion.eyebrow}</p>
+      <h2>{theme.currentSeason.promotion.title}</h2>
+      <p>{theme.currentSeason.promotion.description}</p>
+    </div>
+    <div class="seasonal-panel-side">
+      <p class="season-chip">{theme.currentSeason.label} Theme Active</p>
+      <CTAButton
+        href={theme.currentSeason.promotion.cta.href}
+        label={theme.currentSeason.promotion.cta.label}
+      />
+    </div>
+  </div>
+</section>

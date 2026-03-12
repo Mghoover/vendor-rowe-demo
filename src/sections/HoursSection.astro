@@ -1,0 +1,13 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import InfoGrid from "../components/common/InfoGrid.astro";
+import { business } from "../config/business";
+
+const { heading } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <SectionHeader {...heading} />
+    <InfoGrid items={business.hours} columns={3} />
+  </div>
+</section>

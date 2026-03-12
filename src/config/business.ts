@@ -1,0 +1,40 @@
+export const business = {
+  vertical: "local-small-business",
+  schemaType: "LocalBusiness",
+  additionalSchemaTypes: ["Store"],
+  name: "Vendor Rowe",
+  seoTitleSuffix: "Florence SC Vendor Market",
+  tagline: "A curated boutique vendor marketplace in Florence, South Carolina.",
+  description:
+    "Vendor Rowe is Florence's boutique vendor market featuring antiques, handcrafted goods, curated decor, collectibles, and vintage finds from independent sellers.",
+  phone: "(843) 555-0130",
+  email: "hello@vendorrowe.com",
+  address: "Address coming soon",
+  city: "Florence",
+  state: "South Carolina",
+  postalCode: "29501",
+  websiteUrl: "https://example.com",
+  hours: [
+    { label: "Tuesday", value: "10:00 AM - 5:00 PM" },
+    { label: "Wednesday", value: "10:00 AM - 5:00 PM" },
+    { label: "Thursday", value: "10:00 AM - 5:00 PM" },
+    { label: "Friday", value: "10:00 AM - 6:00 PM" },
+    { label: "Saturday", value: "10:00 AM - 6:00 PM" },
+    { label: "Sunday", value: "12:00 PM - 4:00 PM" },
+    { label: "Monday", value: "Closed" },
+  ],
+  social: {
+    facebook: "https://facebook.com/vendorrowe",
+    instagram: "https://instagram.com/vendorrowe",
+    google: "https://google.com/maps",
+  },
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=Florence%20South%20Carolina&output=embed",
+  serviceAreas: [
+    "Florence",
+    "Darlington",
+    "Hartsville",
+    "Lake City",
+    "Pee Dee Region",
+  ],
+};

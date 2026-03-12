@@ -1,0 +1,35 @@
+---
+import CTAButton from "../components/common/CTAButton.astro";
+import { theme } from "../config/theme";
+
+const { hero } = Astro.props;
+---
+<section class="hero-section">
+  <div class="shell hero-shell">
+    <div class="hero-copy">
+      <p class="section-eyebrow">{hero.eyebrow}</p>
+      <h1>{hero.title}</h1>
+      <p class="hero-description">{hero.description}</p>
+      <div class="hero-actions">
+        {hero.actions.map((action) => (
+          <CTAButton href={action.href} label={action.label} variant={action.variant} />
+        ))}
+      </div>
+      <div class="hero-stat-grid">
+        {hero.highlights.map((item) => (
+          <article class="hero-stat-card">
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="hero-visual-grid">
+      {theme.currentSeason.heroImages.map((image, index) => (
+        <figure class:list={["hero-visual-card", index === 0 && "is-featured"]}>
+          <img src={image} alt={`${theme.currentSeason.label} market visual ${index + 1}`} loading={index === 0 ? "eager" : "lazy"} />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

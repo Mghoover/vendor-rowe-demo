@@ -1,0 +1,14 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import TestimonialCard from "../components/cards/TestimonialCard.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section alt-surface">
+  <div class="shell">
+    <SectionHeader {...heading} centered={true} />
+    <div class="card-grid two-column">
+      {items.map((item) => <TestimonialCard item={item} />)}
+    </div>
+  </div>
+</section>

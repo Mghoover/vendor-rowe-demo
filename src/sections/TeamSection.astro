@@ -1,0 +1,14 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import TeamMemberCard from "../components/cards/TeamMemberCard.astro";
+
+const { heading, items } = Astro.props;
+---
+<section class="content-section">
+  <div class="shell">
+    <SectionHeader eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
+    <div class="team-grid">
+      {items.map((item) => <TeamMemberCard item={item} />)}
+    </div>
+  </div>
+</section>

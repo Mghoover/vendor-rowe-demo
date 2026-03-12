@@ -1,0 +1,39 @@
+---
+import SectionHeader from "../components/common/SectionHeader.astro";
+import { business } from "../config/business";
+
+const { heading } = Astro.props;
+const hoursPreview = business.hours.slice(0, 4);
+---
+<section class="content-section alt-surface">
+  <div class="shell split-layout location-layout">
+    <div>
+      <SectionHeader eyebrow={heading.eyebrow} title={heading.title} description={heading.description} />
+      <div class="stack-list location-copy">
+        <p><strong>{business.name}</strong></p>
+        <p>{business.city}, {business.state}</p>
+        <p>{business.address}</p>
+        <p><a href={`tel:${business.phone}`}>{business.phone}</a></p>
+        <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
+      </div>
+      <div class="location-hours-preview">
+        {hoursPreview.map((item) => (
+          <div class="location-hours-row">
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </div>
+        ))}
+      </div>
+      <div class="tag-list">
+        {business.serviceAreas.map((area) => <span>{area}</span>)}
+      </div>
+    </div>
+    <iframe
+      class="map-frame"
+      src={business.mapEmbedUrl}
+      title={`${business.name} map`}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</section>

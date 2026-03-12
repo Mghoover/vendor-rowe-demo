@@ -1,0 +1,18 @@
+---
+const { item } = Astro.props;
+---
+<article class="content-card menu-card">
+  {item.image && <img src={item.image} alt={item.name} loading="lazy" />}
+  <div class="menu-card-copy">
+    <div class="menu-card-row">
+      <h3>{item.name}</h3>
+      <p class="menu-price">{item.price}</p>
+    </div>
+    <p>{item.description}</p>
+    {item.tags?.length > 0 && (
+      <ul class="tag-list">
+        {item.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    )}
+  </div>
+</article>

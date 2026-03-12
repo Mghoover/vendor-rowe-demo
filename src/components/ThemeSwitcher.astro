@@ -1,0 +1,79 @@
+---
+const { currentTheme = "default" } = Astro.props;
+---
+
+<div class="theme-switcher">
+  <label for="theme-switch">Theme Preview</label>
+  <select id="theme-switch" aria-label="Preview site theme">
+    <option value="default" selected={currentTheme === "default"}>Default</option>
+    <option value="spring" selected={currentTheme === "spring"}>Spring Market</option>
+    <option value="fall" selected={currentTheme === "fall"}>Fall Harvest</option>
+    <option value="christmas" selected={currentTheme === "christmas"}>Christmas Market</option>
+    <option value="valentine" selected={currentTheme === "valentine"}>Valentine Boutique</option>
+  </select>
+</div>
+
+<script>
+  const select = document.getElementById("theme-switch");
+  const storageKey = "vendor-rowe-demo-theme";
+
+  if (select) {
+    const savedTheme = window.localStorage.getItem(storageKey);
+
+    if (savedTheme) {
+      document.documentElement.dataset.theme = savedTheme;
+      select.value = savedTheme;
+    }
+
+    select.addEventListener("change", (event) => {
+      const target = event.target;
+      const nextTheme = target && "value" in target ? target.value : "default";
+      document.documentElement.dataset.theme = nextTheme;
+      window.localStorage.setItem(storageKey, nextTheme);
+    });
+  }
+</script>
+
+<style>
+  .theme-switcher {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 120;
+    display: grid;
+    gap: 0.45rem;
+    min-width: 13rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .theme-switcher label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .theme-switcher select {
+    width: 100%;
+    padding: 0.72rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+  }
+
+  @media (max-width: 720px) {
+    .theme-switcher {
+      left: 1rem;
+      right: 1rem;
+      min-width: 0;
+    }
+  }
+</style>

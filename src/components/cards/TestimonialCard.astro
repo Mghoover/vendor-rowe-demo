@@ -1,0 +1,9 @@
+---
+const { item } = Astro.props;
+---
+<article class="content-card testimonial-card">
+  <p class="quote-mark">"</p>
+  <p class="testimonial-quote">{item.quote}</p>
+  <h3>{item.author}</h3>
+  <p class="card-meta">{item.role}</p>
+</article>
