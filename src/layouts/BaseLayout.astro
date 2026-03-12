@@ -13,7 +13,7 @@ const titleSuffix = business.seoTitleSuffix ?? business.name;
 const resolvedTitle = pageTitle ? `${pageTitle} | ${titleSuffix}` : titleSuffix;
 const resolvedDescription = pageDescription ?? business.description;
 const canonicalUrl = new URL(Astro.url.pathname, business.websiteUrl).toString();
-const showThemeSwitcher = import.meta.env.DEV || Astro.url.searchParams.get("theme-demo") === "1";
+const showThemeSwitcher = import.meta.env.PUBLIC_ENABLE_THEME_SWITCHER !== "false";
 const openingHoursSpecification = business.hours.map((item) => ({
   "@type": "OpeningHoursSpecification",
   dayOfWeek: item.label,
