@@ -61,7 +61,7 @@ const schemaGraph = schemaTypes.map((schemaType) => ({
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify({ "@graph": schemaGraph })} />
-    <script is:inline>{`window.ORDINIS_SITE_ID = ${JSON.stringify(hub.siteId)};`}</script>
+    <script is:inline set:html={`window.ORDINIS_SITE_ID = ${JSON.stringify(hub.siteId)};`}></script>
     <script src={hub.trackerUrl}></script>
   </head>
   <body>
