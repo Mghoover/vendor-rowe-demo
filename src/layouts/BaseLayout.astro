@@ -6,6 +6,7 @@ import SeasonalDecor from "../components/SeasonalDecor.astro";
 import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 import theme from "../content/siteTheme.json";
 import { business } from "../config/business";
+import { hub } from "../config/hub";
 import { theme as siteTheme } from "../config/theme";
 
 const { pageTitle, pageDescription } = Astro.props;
@@ -60,6 +61,8 @@ const schemaGraph = schemaTypes.map((schemaType) => ({
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify({ "@graph": schemaGraph })} />
+    <script is:inline>{`window.ORDINIS_SITE_ID = ${JSON.stringify(hub.siteId)};`}</script>
+    <script src={hub.trackerUrl}></script>
   </head>
   <body>
     <SeasonalDecor />
