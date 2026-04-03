@@ -63,9 +63,13 @@ const schemaGraph = schemaTypes.map((schemaType) => ({
     <script type="application/ld+json" set:html={JSON.stringify({ "@graph": schemaGraph })} />
     <script
       is:inline
-      set:html={`window.ORDINIS_HUB_ENDPOINT = ${JSON.stringify(hub.endpointUrl)};\nwindow.ORDINIS_SITE_ID = ${JSON.stringify(hub.siteId)};`}
+      set:html={`window.ORDINIS_HUB_CONFIG = ${JSON.stringify({
+        siteId: hub.siteId,
+        endpointUrl: hub.endpointUrl,
+        heartbeatDelayMs: 15000,
+      })};`}
     ></script>
-    <script src={hub.trackerUrl}></script>
+    <script defer src="/scripts/ordinis-hub.js"></script>
   </head>
   <body>
     <SeasonalDecor />
